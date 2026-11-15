@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SockWire</string>
+    <string name="add_profile">Добавить профиль</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="connect">Подключить</string>
+    <string name="disconnect">Отключить</string>
+    <string name="info">Инфо</string>
+    <string name="status_idle">Ожидание</string>
+    <string name="status_running">SOCKS5 слушает 127.0.0.1</string>
+    <string name="port_label">Порт SOCKS5</string>
+    <string name="no_profiles">Нет профилей. Нажми «Добавить профиль».</string>
+    <string name="engine_missing">Движок отсутствует — положи sockwire-core.aar в app/libs/</string>
+    <string name="port_busy">Порт занят</string>
+    <string name="profile_name">Имя</string>
+    <string name="private_key">Приватный ключ</string>
+    <string name="public_key">Публичный ключ</string>
+    <string name="preshared_key">Preshared key (опционально)</string>
+    <string name="local_address">Локальный адрес (например 10.88.4.71/32)</string>
+    <string name="endpoint">Эндпоинт (host:port)</string>
+    <string name="mtu">MTU</string>
+    <string name="keepalive">Persistent keepalive</string>
+</resources>

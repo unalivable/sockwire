@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SockWire</string>
+    <string name="add_profile">Add profile</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="info">Info</string>
+    <string name="status_idle">Idle</string>
+    <string name="status_running">SOCKS5 listening on 127.0.0.1</string>
+    <string name="port_label">SOCKS5 port</string>
+    <string name="no_profiles">No profiles. Tap "Add profile".</string>
+    <string name="engine_missing">Engine missing — add sockwire-core.aar to app/libs/</string>
+    <string name="port_busy">Port busy</string>
+    <string name="profile_name">Name</string>
+    <string name="private_key">Private key</string>
+    <string name="public_key">Public key</string>
+    <string name="preshared_key">Preshared key (optional)</string>
+    <string name="local_address">Local address (e.g. 10.88.4.71/32)</string>
+    <string name="endpoint">Endpoint (host:port)</string>
+    <string name="mtu">MTU</string>
+    <string name="keepalive">Persistent keepalive</string>
+</resources>

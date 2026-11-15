@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout android:orientation="vertical" android:padding="12dp"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <EditText android:id="@+id/edName" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/profile_name"/>
+    <EditText android:id="@+id/edPrivate" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/private_key"
+        android:inputType="text" android:textSize="12sp"/>
+    <EditText android:id="@+id/edPublic" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/public_key"
+        android:inputType="text" android:textSize="12sp"/>
+    <EditText android:id="@+id/edPreshared" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/preshared_key"
+        android:inputType="text" android:textSize="12sp"/>
+    <EditText android:id="@+id/edAddress" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/local_address"
+        android:inputType="text" android:textSize="12sp"/>
+    <EditText android:id="@+id/edEndpoint" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/endpoint"
+        android:inputType="text" android:textSize="12sp"/>
+    <EditText android:id="@+id/edMtu" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/mtu"
+        android:inputType="number"/>
+    <EditText android:id="@+id/edKeepalive" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/keepalive"
+        android:inputType="number"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="8dp">
+        <Button android:id="@+id/btnSave" android:layout_width="0dp"
+            android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="@string/save"/>
+        <Button android:id="@+id/btnDelete" android:layout_width="0dp"
+            android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="@string/delete"/>
+    </LinearLayout>
+    <Button android:id="@+id/btnConnect" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="6dp"
+        android:text="@string/connect"/>
+</LinearLayout>
+</ScrollView>

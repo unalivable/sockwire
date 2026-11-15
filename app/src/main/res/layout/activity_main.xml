@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="12dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button android:id="@+id/btnAdd" android:layout_width="0dp"
+            android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="@string/add_profile"/>
+        <Button android:id="@+id/btnInfo" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/info"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="6dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/port_label"/>
+        <EditText android:id="@+id/portInput" android:layout_width="0dp"
+            android:layout_weight="1" android:layout_height="wrap_content"
+            android:inputType="number" android:text="5599"/>
+    </LinearLayout>
+    <TextView android:id="@+id/status" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:padding="6dp"
+        android:text="@string/status_idle" android:textStyle="bold"/>
+    <Button android:id="@+id/btnDisconnect" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="@string/disconnect"
+        android:visibility="gone"/>
+    <ListView android:id="@+id/list" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1"/>
+</LinearLayout>
