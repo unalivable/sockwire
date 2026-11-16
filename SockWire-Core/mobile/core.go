@@ -7,7 +7,7 @@ import (
 	"sync"
 
 	"github.com/pufferffish/wireproxy"
-	"github.com/pufferffish/wireproxy/config"
+	"github.com/pufferffish/pufferffish/wireproxy/config"
 )
 
 var (
