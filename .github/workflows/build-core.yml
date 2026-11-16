@@ -8,27 +8,39 @@ on:
       - '.github/workflows/build-core.yml'
 
 jobs:
-  aar:
+  build-aar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
         with:
-          go-version: '1.25.x'
+          go-version: '1.22.x'
+
       - name: Install gomobile
         run: |
           go install golang.org/x/mobile/cmd/gomobile@latest
           go install golang.org/x/mobile/cmd/gobind@latest
-          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
-          echo "ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME" >> "$GITHUB_ENV"
-      - name: Resolve deps
+          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+
+      - name: Install NDK r25c (Last version supporting API 19)
+        run: |
+          wget -q https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
+          unzip -q android-ndk-r25c-linux.zip
+          echo "ANDROID_NDK_HOME=${{ github.workspace }}/android-ndk-r25c" >> $GITHUB_ENV
+
+      - name: Resolve Go dependencies
         working-directory: SockWire-Core
         run: |
-          go get github.com/whyvl/wireproxy@latest
+          go get github.com/octeep/wireproxy@latest
           go mod tidy
-      - name: gomobile init
+
+      - name: Init gomobile
         run: gomobile init
-      - name: gomobile bind (armv7, API 19)
+
+      - name: Build AAR
         working-directory: SockWire-Core
         run: |
           gomobile bind \
@@ -38,7 +50,9 @@ jobs:
             -ldflags='-s -w' \
             -o "$GITHUB_WORKSPACE/sockwire-core.aar" \
             ./mobile
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload AAR Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: sockwire-core-aar
           path: sockwire-core.aar
