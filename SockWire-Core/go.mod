@@ -1,5 +1,5 @@
 module sockwire-core
 
-go 1.21
+go 1.24
 
-require github.com/pufferffish/wireproxy v1.0.10
+require github.com/shahradelahi/wiresocks v0.0.0-20250616172827-a96360bb4369
