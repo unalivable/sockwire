@@ -6,8 +6,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/octeep/wireproxy"
-	"github.com/octeep/wireproxy/config"
+	"github.com/pufferffish/wireproxy"
+	"github.com/pufferffish/wireproxy/config"
 )
 
 var (

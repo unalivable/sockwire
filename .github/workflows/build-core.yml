@@ -34,7 +34,7 @@ jobs:
       - name: Resolve Go dependencies
         working-directory: SockWire-Core
         run: |
-          go get github.com/octeep/wireproxy@latest
+          go get github.com/pufferffish/wireproxy@v1.0.10
           go mod tidy
 
       - name: Init gomobile

@@ -2,4 +2,4 @@ module sockwire-core
 
 go 1.21
 
-require github.com/octeep/wireproxy v1.1.0
+require github.com/pufferffish/wireproxy v1.0.10
