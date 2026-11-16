@@ -1,5 +1,4 @@
 // Package mobile is the gomobile entrypoint for SockWire Core.
-// It wraps wireproxy: userspace WireGuard + gvisor/netstack + SOCKS5 listener.
 package mobile
 
 import (
@@ -7,7 +6,7 @@ import (
 	"sync"
 
 	"github.com/pufferffish/wireproxy"
-	"github.com/pufferffish/pufferffish/wireproxy/config"
+	"github.com/pufferffish/wireproxy/config"
 )
 
 var (
@@ -15,6 +14,7 @@ var (
 	routine *wireproxy.Routine
 )
 
+// Start parses a wireproxy .conf text and starts the tunnel.
 func Start(confText string) string {
 	mu.Lock()
 	defer mu.Unlock()
@@ -33,6 +33,7 @@ func Start(confText string) string {
 	return ""
 }
 
+// Stop halts the tunnel.
 func Stop() string {
 	mu.Lock()
 	defer mu.Unlock()
@@ -47,10 +48,12 @@ func Stop() string {
 	return ""
 }
 
+// IsRunning reports engine state.
 func IsRunning() bool {
 	mu.Lock()
 	defer mu.Unlock()
 	return routine != nil
 }
 
+// Version is the SockWire Core version string.
 func Version() string { return "sockwire-core-1.0.0" }
